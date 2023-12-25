@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/loaisp.css">
+    <link rel="stylesheet" href="/css/quantri.css">
+    
+    <title>Quản lý cửa hàng</title>
+</head>
+<body>
+    <div class="quantri">
+        <div class="headerTQ">
+            <img src="/image/logo.webp" alt="">
+            <div class="headerTQ_hello">
+                <span>Xin chào <i class="fa-solid fa-caret-down"></i>
+                    <div class="headerTQ_submenu">
+                        <a href="/index.html" class="dangnhap" style="text-align:left ;"><i class="fa-solid fa-user" style="padding-right:5px;"></i>Trang trủ</a>
+                        <a href="/login.html" class="dangnhap"><i class="fa-solid fa-arrow-right-to-bracket" style="padding-right:5px;"></i>Đăng xuất</a>
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="containerTQ">
+            <div class="categoryTQ">
+                <ul>
+                    <li> <a href="/trangquantri/quantri.html"><i class="categoryTQ_icon fas fa-tachometer-alt"></i> Tổng quan</a></li>
+                    <li> <a href="/trangquantri/loaisp.html"><i class="categoryTQ_icon fas fa-barcode"></i>Loại sản phẩm</a> </li>
+                    <li> <a href="/trangquantri/nhacungcap.html"><i class="categoryTQ_icon fas fa-truck"></i>Nhà cung cấp</a></li>
+                    <li> <a href="/trangquantri/khachhang.html"><i class="categoryTQ_icon fas fa-users"></i>Khách hàng</a></li>
+                    <li> <a href="/trangquantri//nhanvien.html"><i class="categoryTQ_icon fas fa-barcode"></i>Sản phảm</a></li>
+                    <li> <a href="/trangquantri/hoadonnhap.html"><i class="categoryTQ_icon fas fa-file-import"></i>Hóa đơn nhập</a></li>
+                    <li> <a href="/trangquantri/hoadonban.html"> <i class="categoryTQ_icon fas fa-shopping-cart"></i>Hóa đơn bán</a></li>
+                </ul>
+            </div>
+            <div class="inputloaisp">
+                <div class="title">
+                    Nhập thông tin nhân viên
+                    <hr>
+                </div>
+                <div class="inputloaisp_sp">
+                    <form>
+                        <div class="padding-box">
+                            <label for="txtright">Mã nhân viên:</label>
+                        </div>
+                        <div class="padding-box">
+                            <input type="text" id="maloai" placeholder="Nhập mã nhân viên"  >
+                        </div>
+                        <div class="padding-box">
+                            <label for="txtright">Tên nhân viên:</label>
+                        </div>
+                        <div class="padding-box">
+                            <input type="text" id="tenloai" placeholder="Nhập tên nhân viên..." >
+                        </div>
+                        <div class="padding-box">
+                            <label for="txtright">Thao tác:</label>
+                        </div>
+                        <div class="padding-box">
+                            <input type="text" id="thaotac" placeholder="Nhập thao tác muốn làm..." >
+                        </div>
+                    </form>
+                    <div class="btn_loaisp">
+                        <button class="btn-form" onclick="Themloaisp()" style="background-color:#2535af;"
+                            ><i class="btn_icon fa-solid fa-circle-plus"></i>Thêm nhân viên
+                        </button>
+                        <button class="btn-form" onclick="Nhapmoi()" style="background-color: #2535af;border: 1px solid #B8D20B; margin-left: 10px;"
+                            ><i class="btn_icon fa-solid fa-screwdriver-wrench"></i>Nhập mới
+                        </button>
+                        <button class="btn-form" onclick="Capnhap()" style="background-color:#2535af ; margin-left: 10px;"
+                            ><i class="btn_icon fa-solid fa-up-right-from-square"></i>Cập nhật thông tin
+                        </button>
+                       
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="dsloaisp">
+                <div class="title">
+                    Danh sách thông tin nhân viên
+                    <hr>
+                </div>
+                <div>
+                <div class="dsloaisp_padding-box">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>Mã nhân viên</th>
+                                <th>Tên nhân viên</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listTypeProduct">
+                            <!-- <tr>
+                                <td style="text-align:center;"><input type="checkbox"></td>
+                                <td>555551</td>
+                                <td>PC Đồ Họa - WORKSTATION</td>
+                                <td style="text-align: center; cursor: pointer;">
+                                    <i class="fas fa-edit" title="Sửa"></i>
+                                    <i class="fas fa-trash-alt" title="Xóa"></i>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="dsloaisp_padding-box">
+                    <div class="box-sum">
+                        <div class="box-left">
+                            Số lượng nhân viên: <span id="soluong"></span>
+                        </div>
+                        <div class="box-right">
+                            <button><i class="fas fa-angle-left"></i></button>
+                            <button>1</button>
+                            <button>2</button>
+                            <button>3</button>
+                            <button>4</button>
+                            <button><i class="fas fa-angle-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var list = JSON.parse(localStorage.getItem('loaisanpham')) || [];
+
+        function Themloaisp(){
+            var maloai = document.getElementById('maloai').value;
+            var tenloai = document.getElementById('tenloai').value;
+            var thaotac =document.getElementById('thaotac').value;
+
+            if(maloai == null || maloai == ""){
+                alert("Mã loại không được bỏ trống! Vui lòng nhập lại")
+                return false;
+            }
+            else if(tenloai == null || tenloai == ""){
+                alert("Tên loại không được bỏ trống! Vui lòng nhập lại")
+                return false;  
+            }
+            else if(thaotac==null || thaotac ==""){
+               alert("Thao tác không thể thực hiện") 
+            }  
+            for(x of list){
+                if(x.maloai == maloai){
+                    alert("Mã loại đã tồn tại! Vui lòng nhập lại");
+                    return false;
+                }
+            }
+
+            if(list == null) list = [];
+            var loaisp ={
+                'maloai': maloai,
+                'tenloai': tenloai,
+                'thaotac':thaotac,
+            }
+            list.push(loaisp);
+            alert("Thêm thành công");
+            localStorage.setItem("loaisanpham", JSON.stringify(list));
+            location.reload();
+
+        }
+
+        function loaddata(){
+            var str = "";
+            var sl = 0;
+            for(x of list){
+                sl ++;
+                str +=`<tr>
+                            <td style="text-align:center;"><input type="checkbox"></td>
+                            <td>${x.maloai}</td>
+                            <td>${x.tenloai}</td>
+                            <td>${x.thaotac}</td>
+                            <td style="text-align: center; cursor: pointer;">
+                              
+                                <i class="fas fa-trash-alt" title="Xóa" onclick = "Xoa('${x.maloai}')"></i>
+                            </td>
+                        </tr>`
+            }
+            document.getElementById('listTypeProduct').innerHTML = str;
+            document.getElementById('soluong').innerHTML = sl;
+        }
+        loaddata()
+
+        function Xoa(maloai) {
+           
+            if(confirm("Bạn có muốn xóa nhân viên không")){
+                var index = list.findIndex(function(maloai){
+                    return x.maloai == document.getElementById('maloai').value
+                })
+                if(index <=0){
+                    list.splice(index,1)
+                }
+            }
+            localStorage.removeItem("loaisanpham");
+            localStorage.setItem("loaisanpham", JSON.stringify(list));
+            location.reload();
+
+        }
+
+        function SuaLoaisp(maloai) {
+            for(x of list){
+                var maloai = document.getElementById('maloai').value = x.maloai
+                var tenloai = document.getElementById('tenloai').value = x.tenloai;
+                var thaotac =document.getElementById('thaotac').value = x.thaotac
+            }
+        }
+
+        function Nhapmoi(){
+            var maloai = document.getElementById('maloai').value = ""
+            var tenloai = document.getElementById('tenloai').value = ""
+            var thaotac = document.getElementById('thaotac').value = ""
+
+        }
+
+        function Capnhap(){
+            var maloai = document.getElementById('maloai').value;
+            var tenloai = document.getElementById('tenloai').value;
+            var thaotac = document.getElementById('thaotac').value;
+            var ok = true;
+
+            if(maloai == null || maloai == ""){
+                alert("Mã loại không được bỏ trống! Vui lòng nhập lại")
+                return false;
+            }
+            else if(tenloai == null || tenloai == ""){
+                alert("Tên loại không được bỏ trống! Vui lòng nhập lại")
+                return false;
+            }
+
+            for(x of list){
+                if(x.maloai == maloai){
+                    x.maloai = maloai;
+                    x.tenloai = tenloai;
+                    x.thaotac =thaotac;
+                    ok = false;
+                    break;
+                }
+            }
+            if(ok == false){
+                alert("Cập nhập thành công");
+                localStorage.setItem("loaisanpham", JSON.stringify(list));
+                location.reload();
+            }
+            else{
+                alert("Cập nhập thất bại")
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

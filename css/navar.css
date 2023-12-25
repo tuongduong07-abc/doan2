@@ -1,0 +1,135 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+.nav-left{
+    display: flex;
+    max-width: 30%;
+    position: relative;
+    
+}
+.nav-right{
+    margin-right: 30px;
+    
+}
+.nav-right .nav-link li{
+    margin-left: 30px;
+    position: relative;
+    
+}
+.search-text{
+    margin-left: 15px;
+    border-bottom: 1px solid #231f20;
+}
+.search-text input{
+    border: none;
+    height: 30px;
+    font-size: 16px;
+}
+
+.search-btn{
+    height: 30px;
+    text-align: center;
+    color: #231f20;
+}
+
+.search-text input:focus, .search-text input:active, .search-text input{
+    outline: 0;
+    background-color: rgba(255, 205, 205, 0);
+    outline-style: none;
+    border-radius: 10px 0px 0px 10px;
+}
+
+.nav-link>li a:hover{
+    color:white;
+    background-color: #231f20;
+}
+/*Menu đa cấp*/
+.nav-link li.menu-item:hover >.menu-child ,.menu-item .menu-child-item:hover >.menu-child ,.nav-link li #logged:hover .logged-option button {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-child, .logged-option button{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+.logged-option button{
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#logged i{
+    padding-right: 10px;
+}
+/* .menu-child-item{
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+} */
+.menu-child-item a, .logged-option button{
+    color: #231f20;
+    display:block;
+    padding: 7px 0px 7px 7px;
+    width: 100%;
+}
+
+.menu-child .menu-child{
+    left: 100%;
+    top: 0;
+}
+/* logo */
+.logo a{
+    font-family: 'Dancing Script', cursive;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: #231f20;
+    /* color:dodgerblue; */
+}
+
+/* Kiểu chữ,định dạng link trên header */
+.nav-link li a {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #231f20;
+    text-transform: uppercase;
+    transition: all 0.5s ease 0s;
+    
+}
+.nav-link li{
+    display: inline-block;
+    padding: 5px 0px;
+    margin-left: 10px;
+    border-bottom: 1px solid #231f20;
+    /* position: relative; */
+    
+}
+
+/* header khi lăn chuột */
+.sticky{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 10px 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Ảnh dưới header */
+.banner img{
+    width: 100%;
+    height: auto;
+}
+

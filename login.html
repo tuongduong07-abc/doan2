@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/54f0cb7e4a.js" crossorigin="anonymous"></script>
+    <title>Trang quản trị</title>
+</head>
+<body>
+    <div class="login">
+        <div class="lginQT">
+            <form action="" id="formdangnhap">
+                <div class="title">Đăng nhập</div>
+                <div class="inp">
+                    <label for="taikhoan"><i class="iconlgadmin fas fa-user"></i></label>
+                    <input type="text" name="taikhoan" id="tk" placeholder="Nhập tên đăng nhập..." >
+                </div>
+                <div class="inp">
+                    <label for="matkhau"><i class="iconlgadmin fas fa-lock"></i></label>
+                    <input type="password" name="matkhau" id="mk" placeholder="Nhập mật khẩu..." >
+                </div>
+                <div class="miss-pass">
+                    <a href="">Quên mật khẩu</a>
+                </div>
+                <input type="submit" class="dangnhapadmin" value="Đăng nhập">
+            </form>
+        <div>
+    </div>
+    <script>
+        var list = JSON.parse(localStorage.getItem('admin')) || [{
+            username: "admin",
+            password: "123",
+        
+        }];
+
+        var dangnhap = document.getElementById('formdangnhap')
+        dangnhap.onsubmit = function(e){
+            e.preventDefault()
+            var username = document.getElementById('tk').value;
+            var password = document.getElementById('mk').value;
+            // alert('123')
+            for(x of list){
+                if((username == x.username  && password == x.password)){
+                    var id = {
+                        username: x.username,
+                        password : x.password,
+                    }
+                    localStorage.setItem('id', JSON.stringify(id));
+                    window.location.href = "./trangquantri/quantri.html";
+                    break;
+                }
+                else if((username = x.username  && password != x.password)){
+                    alert("Tài khoản hoặc mật khẩu sai");
+                    break;
+                }
+            }
+        }
+        
+
+    </script>
+     
+</body>
+</html>

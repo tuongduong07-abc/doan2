@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ hàng</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/cart2.css">
+    <link rel="stylesheet" href="css/navar.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    
+    <!-- Icon -->
+    <script src="https://kit.fontawesome.com/951fcb8c3d.js" crossorigin="anonymous"></script>
+    <!-- Navbar effect -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
+    <!-- javascrip -->
+    <script src="/js/cart.js"></script>
+</head>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Mulish:ital,wght@1,300&family=Roboto+Condensed&display=swap');
+        *{
+            font-family: 'Roboto Condensed', sans-serif;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+    </style>
+    <header>
+        <div class="nav-left">
+            <ul class="nav-link">
+                <li class="menu-item">
+                    <a href="">Shop</a>
+                    <div class="menu-child">
+                        <div class="menu-child-item">
+                            <ul class="nav-link">
+                                <li class="menu-item">
+                            <a href="">Nồi cơm</a> 
+                            <div class="menu-child">
+                                <div class="menu-child-item">
+                                    <a href="">Noi com</a>
+                                </div>
+                                <div class="menu-child-item">
+                                    <a href="">Noi nuong</a>
+                                </div>
+                                <div class="menu-child-item">
+                                    <a href="">Noi nuong</a>
+                                </div>
+                                <div class="menu-child-item">
+                                    <a href="">Noi nuong</a>
+                                </div>
+                            </div> 
+                                </li>
+                             </ul>
+                       
+                        </div>
+                        <div class="menu-child-item">
+                            <a href="">Nồi nướng</a>
+                            
+                        </div>
+                        <div class="menu-child-item">
+                            <a href="">Nhà cửa</a>
+                        </div>
+                        <div class="menu-child-item">
+                            <a href="">Thông Tin</a>
+                        </div>
+                    </div>
+                </li> 
+                
+            </ul>
+            <div class="search-text">
+                <input type="search" placeholder="Tìm sản phẩm">
+                <a class="search-btn" href="">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                
+            </div>
+            
+        </div>
+        <div class="logo">
+            <a href="index.html">Đồ Gia Dụng </a>
+        </div>
+        
+        <div >
+            <ul>
+               
+                <li>
+                    <a  href="/login.html"> <i class="fas fa-user-secret"> </i></a>
+                  </li>
+                  <li>
+                      <a  href="/cart.html"> <i class="fas fa-shopping-cart"></i></a>
+                  </li>
+            </ul>
+        </div>
+        <!-- <ul class="user">
+            <li><a href="#"><ion-icon name="person-circle-outline"></ion-icon></a></li>
+            <li><a href="#"><ion-icon name="bag-handle-outline"></ion-icon></a></li>
+        </ul> -->
+    </header>
+    <div class="main">
+        <div class="title">Giỏ hàng</div>
+        <div class="row">
+            <div class="left">
+                <table class="table-prod">
+                    <thead>
+                        <tr>
+                            <th colspan="3">SẢN PHẨM</th>
+                            <th>GIÁ</th>
+                            <th>SỐ LƯỢNG</th>
+                            <th>TẠM TÍNH</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listCart">
+                        <!-- <tr>
+                            <td><i class="fa-solid fa-circle-xmark"></i></td>
+                            <td><img src="./img/img1.jpg"></td>
+                            <td>ÁO SƠ MI DENIM. REGULAR - 10S21DSH005</td>
+                            <td>450.000₫</td>
+                            <td>
+                                <button>-</button>
+                                <input type="text" class="txtbox-count">
+                                <button>+</button>
+                            </td>
+                            <td>450.000₫</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-circle-xmark"></i></td>
+                            <td><img src="./img/img2.jpg"></td>
+                            <td>ÁO SƠ MI TAY DÀI DOBBY.FITTED - 10F21SHL018</td>
+                            <td>540.000₫</td>
+                            <td>
+                                <button>-</button>
+                                <input type="text" class="txtbox-count">
+                                <button>+</button>
+                            </td>
+                            <td>540.000₫</td>
+                        </tr> -->
+                    </tbody>
+                </table>
+                <div class="update">
+                    <button onclick="updateCart()">Cập nhật giỏ hàng</button>
+                    <button onclick="XoaCart()">Xóa giỏ hàng</button>
+                    <script src="js/cart.js"></script>
+                </div>
+            </div>
+            <div class="right">
+                <table class="table-right">
+                    <tr>
+                        <td colspan="2" class="title">CỘNG GIỎ HÀNG</td>
+
+                    </tr>
+                    <tr>
+                        <td class="h">Tạm tính</td>
+                        <!-- <td class="price h">12150000₫</td> -->
+                        <td class="price h" id="tTong">0</td>
+                    </tr>
+                    <tr>
+                        <td>Tổng</td>
+                        <!-- <td class="price">12150000</td> -->
+                        <td class="price" id="spTong">0</td>
+                    </tr>
+                </table>
+                <div class="pay">
+                    <button onclick="DatHang()">Đặt hàng</button>
+                    <script src="js/cart.js"></script>
+                </div>
+                <div class="endow">
+                    <p><i class="fas fas fa-ticket-alt"></i> Phiếu ưu đãi</p>
+                    <input type="text" placeholder="Mã ưu đãi"><br>
+                    <button class="btn-updateCart">Áp dụng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <footer class="footer">
+        <div class="footer-left">
+            <h3>Tải ứng dụng TD Gia Dụng</h3>
+            <div class="credit-cards">
+                <img src="image/appstore.jpg" alt="">
+                <img src="image/googleplay.jpg" alt="">
+                <img src="img/paypal.png" alt="">
+            </div>
+            <p class="footer-copyright">2022-2023</p>
+        </div> 
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>VIỆT NAM</span> Nguyễn Phạm Tùng Dương </p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>0986292203</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="#">tungduong07@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <p class="footer-about">
+                <span>Tổng đài hỗ trợ</span>
+                Tổng đài hỗ trợ (Miễn phí gọi)<br>
+
+                Gọi mua: 1800.1061 (7:30 - 22:00)<br>
+
+                Kỹ thuật: 1800.1764 (7:30 - 22:00)<br>
+
+                Khiếu nại: 1800.1063 (8:00 - 21:30)<br>
+
+                Bảo hành: 1800.1065 (8:00 - 21:00)
+            </p>
+
+            <div class="footer-media">
+                <a href="https://www.youtube.com/watch?v=f_RSVZ_4uPk"><i class="fa fa-youtube"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100080375607162"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                <a href="https://www.instagram.com/"><i class="fa fa-linkedin"></i></a>
+            </div>
+        </div>  
+    </footer>
+    <div class="footer-bottom">
+        Bản quyền thuộc về Nguyễn Phạm Tùng Dương
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./js/cart.js"></script>
+</body>
+</html>
